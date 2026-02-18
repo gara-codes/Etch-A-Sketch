@@ -39,7 +39,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: peachpuff;
+    background-color: transparent;
 }
 
 button{
@@ -70,4 +70,11 @@ button{
 
 #sizept{
     font-size: xx-large;
+}
+
+#color{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    object-fit: cover;
 }

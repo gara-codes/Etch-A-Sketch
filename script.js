@@ -10,6 +10,12 @@ document.addEventListener("mouseup", () => {
     mouseDown = false;
 });
 
+const colorPicker = document.getElementById("colorPicker");
+let currentColor = "#000000"
+colorPicker.addEventListener("input", () => {
+    currentColor = colorPicker.value;
+});
+
 
 for(let i = 0;i<16;i++){
     for(let j = 0;j<16;j++){
@@ -17,7 +23,7 @@ for(let i = 0;i<16;i++){
         block.classList.add("blockElement");
         block.addEventListener("mouseenter", () => {
             if(mouseDown){
-                block.classList.add("backgroundChange");
+                block.style.backgroundColor = currentColor;
             }
         });
         squareContainer.appendChild(block);
@@ -53,5 +59,7 @@ button.addEventListener("click", () => {
         alert("Square number too big!")
     }
    
-    
 })
+
+
+
