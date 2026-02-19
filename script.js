@@ -1,6 +1,33 @@
 const squareContainer = document.querySelector(".squareContainer");
 
 let mouseDown = false;
+let eraseState = false;
+const flagLabel = document.getElementById("eraseFlag");
+const clearAll = document.getElementById("clearAll");
+clearAll.addEventListener("click", () => {
+    const blocks = document.querySelectorAll(".blockElement");
+    blocks.forEach(block => {
+        block.style.backgroundColor = "";
+    });
+});
+clearAll.addEventListener("click", () => {
+    const blocks = document.querySelectorAll(".blockElement2");
+    blocks.forEach(block => {
+        block.style.backgroundColor = "";
+    });
+});
+
+
+const eraser = document.getElementById("eraser");
+eraser.addEventListener("click", () => {
+    if(!eraseState){
+        eraseState = true;
+        flagLabel.textContent = "Erase on";
+    }else{
+        eraseState = false;
+        flagLabel.textContent = "Erase off";
+    }
+})
 
 document.addEventListener("mousedown", () => {
     mouseDown = true;
@@ -27,6 +54,11 @@ for(let i = 0;i<16;i++){
             }
         });
         squareContainer.appendChild(block);
+        block.addEventListener("mouseenter", () => {
+            if(eraseState && mouseDown){
+                block.style.backgroundColor = "#ffff";
+            }
+        });
     }
 }
 
@@ -52,6 +84,11 @@ button.addEventListener("click", () => {
                     block.classList.add("backgroundChange");
                 }
             });
+            block.addEventListener("mouseenter", () => {
+             if(eraseState && mouseDown){
+                block.style.backgroundColor = "#ffff";
+            }
+        });
             squareContainer.appendChild(block);
     }
 }
