@@ -1,7 +1,14 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(images/brushbackground.png);
+}
+
 .squareContainer{
     display: flex;
     flex-wrap: wrap;
     width: 350px;
+    background-color: white;
    
     
 }
@@ -10,14 +17,14 @@ h1{
     text-align: center;
 }
 
-.sidebuttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    border-radius: 40px;
-    width: 60px;
-    height: 60px;
+.sidebuttons{ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 1px solid black; 
+    border-radius: 40px; 
+    width: 70px; 
+    height: 70px;
 }
 
 #colorPicker{
@@ -63,8 +70,8 @@ button{
 }
 
 #eraser{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
 }
 
@@ -75,6 +82,14 @@ button{
 #color{
     width: 100%;
     height: 100%;
-    background: transparent;
     object-fit: cover;
+    display: block;
+}
+
+#squareBtn{
+    
+}
+
+#squarelbl{
+    font-size: small;
 }

@@ -5,17 +5,13 @@ let eraseState = false;
 const flagLabel = document.getElementById("eraseFlag");
 const clearAll = document.getElementById("clearAll");
 clearAll.addEventListener("click", () => {
-    const blocks = document.querySelectorAll(".blockElement");
+    const blocks = document.querySelectorAll("div");
     blocks.forEach(block => {
         block.style.backgroundColor = "";
     });
 });
-clearAll.addEventListener("click", () => {
-    const blocks = document.querySelectorAll(".blockElement2");
-    blocks.forEach(block => {
-        block.style.backgroundColor = "";
-    });
-});
+
+
 
 
 const eraser = document.getElementById("eraser");
@@ -62,7 +58,7 @@ for(let i = 0;i<16;i++){
     }
 }
 
-const button = document.getElementById("squareBtn");
+const button = document.getElementById("squarelbl");
 
 button.addEventListener("click", () => {
     const numSquares = prompt("Enter the number of squares per side");
@@ -81,7 +77,7 @@ button.addEventListener("click", () => {
 
             block.addEventListener("mouseenter", () => {
                 if(mouseDown){
-                    block.classList.add("backgroundChange");
+                    block.style.backgroundColor = currentColor;
                 }
             });
             block.addEventListener("mouseenter", () => {
@@ -96,7 +92,7 @@ button.addEventListener("click", () => {
         alert("Square number too big!")
     }
    
-})
+});
 
 
 
