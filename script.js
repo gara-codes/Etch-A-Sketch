@@ -18,10 +18,10 @@ const eraser = document.getElementById("eraser");
 eraser.addEventListener("click", () => {
     if(!eraseState){
         eraseState = true;
-        flagLabel.textContent = "Erase on";
+        eraser.style.transform = "scale(1.3)";
     }else{
         eraseState = false;
-        flagLabel.textContent = "Erase off";
+        eraser.style.transform = "scale(1)";
     }
 })
 
